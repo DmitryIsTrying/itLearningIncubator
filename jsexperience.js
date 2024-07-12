@@ -27,3 +27,13 @@ for (const row of rows) {
 }
 
 console.log(result);
+
+//Изучил методы .shift .unshift; Цикл while, do while, for, for of.
+let inverted = true;
+for (let i = 1; i <= count; i++) {
+  if (inverted) {
+    rows.unshift(padRow(i, count));
+  } else {
+    rows.push(padRow(i, count));
+  }
+}
