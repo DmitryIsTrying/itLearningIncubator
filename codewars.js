@@ -25,4 +25,17 @@ function xor(a, b) {
   console.log(solution("1", "22"));
   console.log(solution("22", "1"));
 
+  // Tusk 4 
+  function DNAtoRNA(dna) {
+    let rows = dna.split('');
+    let i = rows.length;
+    
+    for (let j = 0; j < i; j++) {
+      if (rows[j] === "T") {
+        rows[j] = "U";
+      }
+    }
   
+    const l = rows.join('');
+    return l;
+  }
