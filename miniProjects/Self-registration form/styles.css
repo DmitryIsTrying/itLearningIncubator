@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: linear-gradient(
+        180deg,
+        rgba(209, 198, 40, 0.618),
+        rgba(216, 210, 123, 0.363)
+      ),
+      url(https://agroprof.com/uploads/2021/10/06ea90da-c0f1-465b-8993-b28c10e25593.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+header {
+    width: 25%;
+    text-align: center;
+    margin: 15px auto 50px auto;
+    padding: 1px 0;
+    background-color: #1b1b32;
+    color: #f5f6f7;
+    border-radius: 40px;
+    box-shadow: 0 0 5px 5px #1b1b32;
+}
+#title {
+    font-size: 26px;
+    font-family: Tahoma;
+}
+form {
+        width: 60vw;
+        max-width: 500px;
+        min-width: 300px;
+        margin: 0 auto 15px auto;
+        background-color: #1b1b32;
+        color: white;
+        padding: 40px;
+        padding-top: 20px;
+        border-radius: 40px;
+}
+#description {
+    text-align: center;
+    background-color: azure;
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 40vh;
+    padding: 20px;
+    background-color: #1b1b32;
+    color: #f5f6f7;
+    font-family: Tahoma;
+    font-size: 16px;
+    border-radius: 40px;
+    box-shadow: 0 0 5px 5px #1b1b32;
+}
+h2 {
+    text-align: center;
+    font-family: Tahoma, sans-serif;
+    margin: 0;
+}
+fieldset {
+    border: none;
+    border-bottom: 2px solid wheat;
+    margin-bottom: 30px;
+}
+
+input, select  {
+    width: 100%;
+    display: block;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 2px solid white;
+    outline-color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+.forButton {
+    display: inline;
+    max-width: 30px;
+}
+.myClass {
+    display: block;
+    margin-bottom: 5px;
+}
+legend {
+    text-align: right;
+    font-family: Tahoma, sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.myButton {
+    display: flex;
+    justify-content: center;
+}
+input[type="submit"] {
+    text-align: center;
+    width: 25%;
+    color: wheat;
+    font-size: 14px;
+    padding: 16px;
+    background-color: black;
+    border: 1px solid wheat;
+    cursor: pointer;
+ }

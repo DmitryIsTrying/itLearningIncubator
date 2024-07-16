@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css">
+    <title>Форма регистрации</title>
+</head>
+<body>
+    <header class="header">
+        <h1 id="title">
+            Форма регистрации
+        </h1>
+    </header>
+    <main class="main">
+        <p id="description">
+            Заполните форму регистрации ниже
+        </p>
+        <form action="#!" method="post" class="myForm" id="survey-form">
+<h2 class="textForForm">
+    Первая часть
+</h2>
+            <fieldset style="border-top: 2px solid wheat; margin-top: 30px;">
+                <label for="name" id="name-label" >Name: <input type="text" id="name" name="first-name" required placeholder="Введите ваше имя" /></label>
+                <label for="email" id="email-label" >Email: <input type="email" id="email" name="email" placeholder="Введите вашу почту" required /></label>
+            </fieldset>
+            <fieldset>
+                <label for="age" id="number-label">Age: <input type="number" id="number" name="age" required min="18" max="100" placeholder="Введите ваш возраст" /></label>
+            </fieldset>
+            <h2 class="textForForm">
+                Вторая часть
+            </h2>
+            <fieldset style="border-top: 2px solid wheat; margin-top: 30px;">
+                <label for="dropdown">Ваша занятость:
+                    <select name="major" id="dropdown">
+                        <option value="">
+                            Выберите подходящее
+                        </option>
+                        <option value="1">
+                            Студент
+                        </option>
+                        <option value="2">
+                            Полная занятость 
+                        </option>
+                        <option value="3">
+                            Неполная занятость
+                        </option>
+                        <option value="4">
+                            Гибридный график
+                        </option>
+                        <option value="5">
+                            Удалённая работа
+                        </option>
+                    </select>
+                </label>
+            </fieldset>
+            <fieldset>
+                <Legend>Порекомендуете нас друзьям?</Legend>
+                <label class="myClass" for="maybe"><input class="forButton" type="radio" id="maybe" name="recommend" value="1" /> Может быть</label>
+                <label class="myClass" for="notsure"><input class="forButton" type="radio" id="notsure" name="recommend" value="2" /> Не уверен</label>
+                <label class="myClass" for="definitely"><input class="forButton" type="radio" id="definitely" name="recommend" checked value="3" /> Определенно</label>
+            </fieldset>
+            <fieldset>
+                <Legend>Чем вы хотите научиться управлять?</Legend>
+                <label for="box1" class="myClass"><input class="forButton" type="checkbox" id="box1" name="1" value="1" />Трактор</label>
+                <label for="box2" class="myClass"><input class="forButton" type="checkbox" id="box2" name="2" value="2" />Культиватор</label>
+                <label for="box3" class="myClass"><input class="forButton" type="checkbox" id="box3" name="3" value="3" />Зерноперерабатываемая техника</label>
+                <label for="box4" class="myClass"><input class="forButton" type="checkbox" id="box4" name="4" value="4" />Столбоставы</label>
+            </fieldset>
+            <fieldset>
+                <Legend>Расскажите о себе:</Legend>
+                <label for="ta">
+                    <textarea name="comment" id="ta" required placeholder="Я люблю управлять..."></textarea>
+                </label>
+            </fieldset>
+            <div class="myButton">
+            <input type="submit" id="submit" value="Отправить" />
+        </div>
+        </form>
+    </main>
+</body>
+</html>
