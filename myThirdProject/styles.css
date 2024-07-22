@@ -1,0 +1,148 @@
+@media (prefers-reduced-motion: no-preference) {
+    * {
+      scroll-behavior: smooth;
+    }
+  }
+
+
+* {
+    box-sizing: content-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(235, 234, 234);
+}
+
+#navbar {
+    position: fixed;
+    height: 100%;
+    margin-left: -10px;
+    border-right: 2px solid rgba(0, 22, 22, 0.5);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 0;
+}
+
+li {
+    border-bottom: 1px solid rgba(0, 22, 22, 0.4);
+}
+
+li:first-of-type {
+    margin-top: 50px;
+    border-top: 1px solid rgba(0, 22, 22, 0.4);
+}
+
+.plusm {
+    padding-left: 50px;
+}
+
+
+a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 32px;
+    font-weight: 500;
+    padding: 15px;
+    padding-left: 25px;
+}
+
+main {
+    margin-left: 450px;
+    width: 57%;
+    border-right: 2px solid rgba(0, 22, 22, 0.5);
+}
+.low__header {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-left: -20px;
+}
+.main-section {
+    padding: 20px;
+}
+.main-section:last-of-type {
+    padding-bottom: 100px;
+}
+.main-section:first-of-type { 
+    padding-top: 100px;
+}
+
+.imn__text {
+    vertical-align: top;
+    color: red;
+    background-color: hsl(0, 3%, 80%);
+    padding: 3px 5px;
+    border-radius: 30px;
+}
+
+p {
+    line-height: 40px;
+    display: inline;
+    margin: 0;
+    font-size: 22px;
+}
+
+
+.lp {
+    display: block;
+    max-width: 45px;
+    color: rgb(0, 4, 255);
+    background-color: hsl(0, 3%, 80%);
+    padding: 3px 5px;
+    border-radius: 30px;
+    margin: 30px 20% 0;
+}
+.items__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px 0;
+    font-size: 10px;
+}
+.num__row {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    font-size: 22px;
+}
+.num:first-of-type { 
+    margin-top: 5px;
+}
+.num { 
+    margin-bottom: 16px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    font-size: 36px;
+    font-weight: bold;
+}
+.footer {
+    background-color: rgba(0, 22, 22, 1);
+    border-top: 2px solid rgba(0, 22, 22, 0.5);;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    color: wheat;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.doka {
+    color: wheat;
+    display: inline;
+    padding: 0;
+    font-size: 26px;
+    text-decoration: underline;
+    text-decoration-style: double;
+}
