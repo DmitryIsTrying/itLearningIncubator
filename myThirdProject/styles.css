@@ -58,6 +58,17 @@ main {
     width: 57%;
     border-right: 2px solid rgba(0, 22, 22, 0.5);
 }
+
+@media screen and (max-width: 1000px){
+    main {
+        width: 100%;
+        margin-left: 0;
+    }
+    #navbar {
+        display: none;
+    }
+}
+
 .low__header {
     font-size: 28px;
     font-weight: 500;
