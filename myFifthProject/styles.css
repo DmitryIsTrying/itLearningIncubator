@@ -97,6 +97,7 @@ body {
     border-radius: 70px;
     text-decoration: none;
     box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: 40%;
 }
 .myMargin {
 margin: 80px 0;
@@ -121,7 +122,7 @@ margin: 80px 0;
     border-radius: 70px;
 }
 .forPad {
-    padding: 30px 40px 30px 20px;
+    padding: 30px 10px 30px 20px;
 }
 .blogtext {
     display: flex;
@@ -265,5 +266,8 @@ hr:last-of-type {
         }
         .text-footer {
             font-size: 15px;
+        }
+        .myProject {
+            width: 95%;
         }
 }
