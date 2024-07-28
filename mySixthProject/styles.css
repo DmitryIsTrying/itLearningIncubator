@@ -1,0 +1,98 @@
+:root {
+    --background: rgb(65, 53, 53);
+}
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    margin: 0;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 30vw;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: antiquewhite;
+    padding: 0 40px;
+    border-radius: 50%;
+}
+.texttitle {
+    font-size: 45px;
+}
+fieldset {
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 50px;
+}
+
+.form {
+    font-size: 20px;
+}
+
+input {
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 8px 40px;
+}
+.btn {
+    background-color: var(--background);
+    opacity: 0.7;
+    color: black;
+    font-size: 20px;
+    vertical-align: middle;
+    padding: 5px 10px;
+}
+
+.result-text {
+    display: none;
+}
+.what {
+    width: 100%;
+    margin: 10px auto;
+    text-align: left;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: lighter;
+}
+.what-text {
+    max-width: 70%;
+    margin-left: 30%;
+
+}
+.result-text {
+    max-width: 80%;
+    margin-left: 50%;
+}
+
+@media only screen AND (max-width: 950px) {
+
+    .main {
+        max-width: 90%;
+        padding: 0 20px;
+        border-radius: 10%;
+    }
+    .texttitle {
+        font-size: 30px;
+    }
+    fieldset {
+        border-radius: 30px;
+        padding: 20px;
+    }
+    .what-text {
+        margin-left: 20%;
+    
+    }
+    .result-text {
+        margin-left: 20%;
+    }
+}
