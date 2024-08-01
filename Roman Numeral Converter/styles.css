@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0;
+height: 100vh;
+background-color: rgba(30, 120, 223, 0.274);
+}
+.center { 
+    display: flex;
+    flex-direction: column;
+    background-color: wheat;
+    width: 30%;
+    min-width: 400px;
+    padding: 150px;
+    border-radius: 30px;
+    border: 1px solid rgba(30, 120, 223, 0.274);
+    box-shadow: 0 0 50px 50px rgba(30, 120, 223, 0.274);
+}
