@@ -1,0 +1,1 @@
+const countSheeps = sheep => sheep.filter(e => e === true).length
