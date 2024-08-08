@@ -1,0 +1,67 @@
+:root {
+    --buttonColor: rgb(149, 199, 12);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    background-color: beige;
+}
+.main {
+    background-color: grey;
+    height: 700px;
+    width: 350px;
+    border-radius: 30px;
+    border: 30px solid black;
+    box-shadow: 0px 0px 40px 1px black;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#user-input {
+    border-radius: 30px;
+    border: none;
+    height: 30px;
+    padding: 5px;
+    color: var(--buttonColor);
+    font-weight: 700;
+    font-size: 25px;
+    margin: 20px
+}
+
+.result {
+    height: 100%;
+    overflow: auto;
+    padding-left: 30px;
+    margin-top: 10px;
+    border-top: 3px solid black;
+}
+.result-element{
+font-size: 23px;
+margin-bottom: 10px;
+}
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid black;
+}
+button {
+    color: var(--buttonColor);
+    font-size: 20px;
+    font-weight: 900;
+    background-color: rgb(155, 131, 131);
+    padding: 2px 20px;
+}
