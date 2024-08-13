@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #efefef;
+}
+#sprite {
+    height: 180px;
+}
+.reverse-btn {
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.reverse-btn img {
+ height: 50px;
+}
+.type-of-poke {
+    border-radius: 20px;
+    margin-right: 10px;
+    padding: 5px;
+}
