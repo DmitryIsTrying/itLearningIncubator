@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { StyledBtn, SuperButton } from "./components/Header/Button.styled";
 import { Link } from "./components/Header/Link.styled";
 import { Menu } from "./components/Header/Menu.styled";
+import { myTheme } from "./styles/Theme.styled";
 
 function App() {
   return (
@@ -23,14 +24,29 @@ function App() {
       </Menu>
 
       <Box>
-        <StyledBtn as={Link} href={"#"}>
+        <StyledBtn fontWeight={100} as={Link} href={"#"}>
           Link
         </StyledBtn>
-        <StyledBtn as="a" href={"#"}>
+        <StyledBtn color="wheat" as="a" href={"#"}>
           Link
         </StyledBtn>
-        <StyledBtn>Hello</StyledBtn>
+        <StyledBtn
+          color={myTheme.colors.primary}
+          btnType={"outline"}
+          fontWeight={300}
+        >
+          Hello
+        </StyledBtn>
+        <StyledBtn
+          color={myTheme.colors.secondary}
+          shadowBtn
+          btnType={"primary"}
+          fontWeight={500}
+        >
+          Hello
+        </StyledBtn>
         <SuperButton>Super Button</SuperButton>
+        <input type="submit" value="submit-submit-submit" />
       </Box>
     </div>
   );
@@ -53,8 +69,7 @@ const Box = styled.div`
     cursor: zoom-in;
   }
 
-@media screen and (max-width: 800px){
-flex-direction: column;
-}
-
+  @media ${myTheme.media.tablet} {
+    flex-direction: column;
+  }
 `;
