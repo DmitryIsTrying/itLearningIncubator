@@ -25,7 +25,7 @@ export const ProgressBar = (props: ProgressBarPropsType) => {
 };
 
 const StyledWrapperSkill = styled.div`
-  max-width: 220px;
+  width: 220px;
   display: flex;
   flex-direction: column;
   margin-bottom: 9px;

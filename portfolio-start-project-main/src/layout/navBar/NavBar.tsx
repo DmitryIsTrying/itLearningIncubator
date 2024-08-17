@@ -112,11 +112,23 @@ const StyledNav = styled.nav`
       padding: 11px;
       background-color: #f0f0f6;
       border-radius: 50%;
-      transition: 0.5s ease;
-      &:hover {
-        background-color: #ffb400;
-        svg {
-          fill: #2b2b2b;
+      @media (hover: hover) {
+        transition: 0.5s ease;
+        &:hover {
+          background-color: #ffb400;
+          svg {
+            fill: #2b2b2b;
+          }
+        }
+      }
+
+      @media (hover: none) {
+        transition: 0.1s ease;
+        &:active {
+          background-color: #ffb400;
+          svg {
+            fill: #2b2b2b;
+          }
         }
       }
     }
