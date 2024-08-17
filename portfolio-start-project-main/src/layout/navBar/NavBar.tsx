@@ -90,7 +90,6 @@ const StyledNav = styled.nav`
   min-width: fit-content;
   max-width: 108px;
   width: 5%;
-  box-shadow: 4px 0px 10px 0px #2f7af91a;
 
   ul {
     display: flex;

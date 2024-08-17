@@ -25,12 +25,12 @@ export const ProgressBar = (props: ProgressBarPropsType) => {
 };
 
 const StyledWrapperSkill = styled.div`
-  width: 220px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin-bottom: 9px;
   &:last-of-type {
-    margin-bottom: 25px;
+    margin-bottom: 0;
   }
 `;
 
