@@ -1,4 +1,14 @@
-const obj2 = new Object({ name: "dima", age: 21 });
-obj2.role = "student";
+const array = [
+  { name: "Dima" },
+  { name: "Dima" },
+  { name: "Dima" },
+  { name: "Dima" },
+];
 
-console.log(obj2);
+// const copyArray = array.map((element) => ({ ...element }));
+const copyArray = [...array];
+
+array[2].name = "Anton";
+
+console.log(array[2]);
+console.log(copyArray[2]);
