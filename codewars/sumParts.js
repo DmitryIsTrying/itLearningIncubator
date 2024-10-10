@@ -8,5 +8,9 @@ function partsSums(ls) {
   })
   return resultArr
 }
-
-console.log(partsSums([]))
+const newArr = Array(5).fill(
+  ((_, i) => {
+    return i ** 2
+  })()
+)
+console.log(newArr)

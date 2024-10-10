@@ -1,0 +1,30 @@
+<script>
+
+    class P {
+        constructor(a) {
+            this[a] = a
+        }
+    }
+
+    class Mix extends P {
+        constructor(b, a) {
+            super(a)
+            this[b] = a
+        }
+    }
+
+    const test = new Mix(2, 4)
+    console.log(test);
+
+
+    function testFoo() {
+        do {
+            return 'no'
+        } while (false);
+
+        return 'yes'
+    }
+    console.log(testFoo());
+
+
+</script>
