@@ -1,4 +1,5 @@
 function validate(n) {
+  if (n) return false
   let flag = n.toString().length % 2 === 0 ? true : false
   const check = n
     .toString()
