@@ -38,4 +38,12 @@ function readData(...times) {
   return resultStr
 }
 
-console.log(formatDuration(132030240))
+// const arr = [1, 2, 3, 4, 5, 6]
+
+// console.log(arr.filter((num) => 1))
+
+console.log(foo)
+
+var foo = () => {
+  return 'test'
+}
