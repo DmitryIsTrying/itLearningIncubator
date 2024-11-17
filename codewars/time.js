@@ -41,9 +41,9 @@
 
 // console.log(stat('02|15|59, 2|47|16, 02|17|20, 2|32|34, 2|32|34, 2|17|17'))
 
-const arr = [1, 2, 2, 3, 3, 4, 5]
-arr['string'] = 'string'
-console.log(Object.entries(arr))
+// const arr = [1, 2, 2, 3, 3, 4, 5]
+// arr['string'] = 'string'
+// console.log(Object.entries(arr))
 
 // arr.forEach((el, i) => {
 //   console.log(i)
@@ -51,3 +51,50 @@ console.log(Object.entries(arr))
 
 // arr['puma'] = 'yes'
 // console.log(arr)
+// const promise = new Promise((resolve, reject) => {
+//   reject(1)
+// })
+// promise
+//   .catch((num) => {
+//     console.log(num)
+
+//     return new Promise((res, rej) => {
+//       rej(2)
+//     })
+//   })
+//   .catch((num) => {
+//     console.log(num)
+//   })
+// function foo() {
+//   console.log(1)
+// }
+
+// foo(console.log(2))
+
+// const input = [
+//   { value: 'abcd', order: 4, expired: false },
+//   { value: 'qwer', order: 2, expired: true },
+//   { value: 'xyz1', order: 1, expired: false },
+//   { value: 'abx2', order: 3, expired: false },
+// ]
+
+// function getStrValues(arr) {
+//   const copyArr = [...arr]
+//   const str = copyArr
+//     .sort((a, b) => a.order - b.order)
+//     .reduce((acc, el) => {
+//       if (!el.expired) {
+//         acc += el.value.split('').reverse().join('')
+//       }
+//       return acc
+//     }, '')
+
+//   return [...new Set(str)].join('')
+// }
+// console.log(getStrValues(input))
+// 1 promise 4 timout 777 then1 then2 timeout2
+function Test() {
+  this.a = 123
+}
+const test = Test()
+console.log(test)

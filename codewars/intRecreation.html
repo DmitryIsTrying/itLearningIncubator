@@ -1,0 +1,35 @@
+<script>
+    function listSquared(m, n) {
+        const result = [];
+
+        for (let i = m; i <= n; i++) {
+            const sumOfSquares = getSumOfDivisorsSquares(i);
+            if (isPerfectSquare(sumOfSquares)) {
+                result.push([i, sumOfSquares]);
+            }
+        }
+
+        return result;
+    }
+
+    function getSumOfDivisorsSquares(num) {
+        let sum = 0;
+
+        for (let j = 1; j <= Math.sqrt(num); j++) {
+            if (num % j === 0) {
+                sum += j * j;
+                if (j !== num / j) {
+                    sum += (num / j) * (num / j);
+                }
+            }
+        }
+
+        return sum;
+    }
+
+    function isPerfectSquare(num) {
+        const sqrt = Math.sqrt(num);
+        return sqrt === Math.floor(sqrt);
+    }
+    console.log(listSquared(1, 250))
+</script>
