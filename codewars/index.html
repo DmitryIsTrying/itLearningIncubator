@@ -5,7 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="./getLoop.js" defer></script>
+    <script>
+        const user1 = () => { }
+        user1.name.value = '123'
+        console.log(Object.getOwnPropertyDescriptors(user1))
+    </script>
 </head>
 
 <body>
