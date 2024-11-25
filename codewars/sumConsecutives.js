@@ -7,4 +7,7 @@ var sumConsecutives = (s) =>
     },
     { result: [], prev: null }
   ).result
+
+console.time('Sum nums')
 console.log(sumConsecutives([1, 4, 4, 4, 0, 4, 3, 3, 1]))
+console.timeEnd('Sum nums')
