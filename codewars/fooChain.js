@@ -1,17 +1,31 @@
-function chained(functions) {
-  return function (args) {
-    functions.forEach((cb) => (args = cb(args)))
-    return args
+// function test(num) {
+//   console.log(num)
+
+//   if (num > 5) {
+//     return false
+//   }
+//   return true
+// }
+
+// for (let i = 0; test(i); i++) {
+//   console.log('loop')
+// }
+
+class Person {
+  #name
+  constructor(name) {
+    this.name(name)
+  }
+  getName() {
+    return this.#name
+  }
+  name(str) {
+    if (str.length < 10) {
+      throw new Error('max length 9')
+    }
+    this.#name = str
   }
 }
-function f1(x) {
-  return x * 2
-}
-function f2(x) {
-  return x + 2
-}
-function f3(x) {
-  return Math.pow(x, 2)
-}
-// const getFoo = chained([f1, f2, f3])
-console.log(f3(f2(f1(0))))
+
+const person = new Person('Dimadimadima')
+console.log(person.getName())
