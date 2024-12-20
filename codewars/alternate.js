@@ -10,4 +10,4 @@ function isAlt(word) {
   }
   return true
 }
-console.log(isAlt('ceebi'))
+console.log(false + 2)
