@@ -29,14 +29,14 @@
 //   console.log(x)
 // })()
 
-class User {
-  test() {
-    console.log(this === User)
-  }
-}
+// class User {
+//   test() {
+//     console.log(this === User)
+//   }
+// }
 
-class Test extends User {
-  constructor() {}
-}
-const user = new Test('ddd')
-user.test()
+// class Test extends User {
+//   constructor() {}
+// }
+// const user = new Test('ddd')
+// user.test()
