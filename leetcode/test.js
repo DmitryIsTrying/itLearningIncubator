@@ -1,12 +1,9 @@
-doItAfter(2).then(() => console.log('something'))
-
-function doItAfter(seconds) {
-  let promise = new Promise((resolve, reject) => {
-    setInterval(() => {
-      console.log('here')
-
-      resolve()
-    }, seconds * 1000)
-  })
-  return promise
+// 'use strict'
+function Car(brand, speed) {
+  this.brand = brand
+  this.speed = speed
 }
+
+const car1 = Car('bmw', 200)
+// console.log(car1)
+console.log(global.brand)
