@@ -1,9 +1,37 @@
-// 'use strict'
-function Car(brand, speed) {
-  this.brand = brand
-  this.speed = speed
-}
+// // const obj = {}
+// // this.test = 13
+// // let value = 5
+// // Object.defineProperty(obj, 'a', {
+// //   get: () => {
+// //     console.log(this)
 
-const car1 = Car('bmw', 200)
-// console.log(car1)
-console.log(global.brand)
+// //     return value++
+// //   },
+// // })
+
+// // if (obj.a === 5 && obj.a === 6 && obj.a === 7) {
+// //   console.log('bingo')
+// // }
+// 'use strict'
+// const obj = {
+//   a: 'test',
+// }
+
+// Object.defineProperty(obj, 'a', {
+//   writable: false,
+// })
+// obj.a = 'super'
+// console.log(obj)
+
+// class Test {
+//   constructor(speed) {
+//     this.speed = speed
+//   }
+// }
+
+// class ExTest extends Test {
+//   model = 'haha'
+// }
+
+// const test = new ExTest(200)
+// console.log(test)
