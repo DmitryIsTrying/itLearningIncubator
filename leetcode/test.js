@@ -35,3 +35,7 @@
 
 // const test = new ExTest(200)
 // console.log(test)
+'use strict'
+console.log(test)
+var test = 5
+var test = 3
