@@ -35,7 +35,30 @@
 
 // const test = new ExTest(200)
 // console.log(test)
-'use strict'
-console.log(test)
-var test = 5
-var test = 3
+// 'use strict'
+// console.log(test)
+// var test = 5
+// var test = 3
+
+// function Test() {
+//   this.car = 5
+//   this.brand = 10
+// }
+// const obj = {}
+// const test = new Test.bind(obj)
+// console.log(test)
+// console.log(obj)
+// for (let index = 0; index < 10; index++) {
+//   console.log(index)
+// }
+
+// for (let index = 0; index < 10; ++index) {
+//   console.log(index)
+// }
+// const obj = {
+//   test: new Date(),
+// }
+// const json = JSON.stringify(obj)
+// console.log(json)
+// const unJson = JSON.parse(obj)
+// console.log(unJson)
