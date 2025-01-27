@@ -62,3 +62,15 @@
 // console.log(json)
 // const unJson = JSON.parse(obj)
 // console.log(unJson)
+
+// function test(a, b, c) {
+//   console.log(a, b, c)
+// }
+// const superTest = test.bind({}, 1, 2)
+// superTest(3)
+
+// ss se pr1 pr2 st
+
+// ss se pr1 pr2 st 3 5
+
+// APP useLayoutEffect uf2 uf1 App usL CLEAN useLayoutEffect uf2clean uf1clean uf2  uf1
