@@ -74,3 +74,14 @@
 // ss se pr1 pr2 st 3 5
 
 // APP useLayoutEffect uf2 uf1 App usL CLEAN useLayoutEffect uf2clean uf1clean uf2  uf1
+
+// function test(arr) {
+//   return arr.map((el) => el * 2)
+// }
+'use strict'
+if (true) {
+  function test() {
+    return 123
+  }
+}
+console.log(test())
