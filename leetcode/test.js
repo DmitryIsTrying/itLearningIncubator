@@ -78,10 +78,13 @@
 // function test(arr) {
 //   return arr.map((el) => el * 2)
 // }
-'use strict'
-if (true) {
-  function test() {
-    return 123
-  }
+// 'use strict'
+// if (true) {
+//   function test() {
+//     return 123
+//   }
+// }
+// console.log(test())
+for (var i = 0; i < 10; i++) {
+  setTimeout(console.log, 100, i)
 }
-console.log(test())
