@@ -85,6 +85,17 @@
 //   }
 // }
 // console.log(test())
-for (var i = 0; i < 10; i++) {
-  setTimeout(console.log, 100, i)
-}
+// for (var i = 0; i < 10; i++) {
+//   setTimeout(console.log, 100, i)
+// }
+
+// class Test extends Object {
+//   constructor() {
+//     super()
+//     this.car = 'bmw'
+//     this.color = 'black'
+//   }
+// }
+
+// const test = new Test()
+// console.log(Test.keys(test))
