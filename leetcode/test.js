@@ -99,3 +99,17 @@
 
 // const test = new Test()
 // console.log(Test.keys(test))
+
+function doubleTriple(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      arr[i] = arr[i] * 2
+    }
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 !== 0) {
+      arr[i] = arr[i] * 3
+    }
+  }
+}
