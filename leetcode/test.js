@@ -100,16 +100,34 @@
 // const test = new Test()
 // console.log(Test.keys(test))
 
-function doubleTriple(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 === 0) {
-      arr[i] = arr[i] * 2
-    }
-  }
+// function doubleTriple(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 === 0) {
+//       arr[i] = arr[i] * 2
+//     }
+//   }
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 !== 0) {
-      arr[i] = arr[i] * 3
-    }
-  }
-}
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 !== 0) {
+//       arr[i] = arr[i] * 3
+//     }
+//   }
+// }
+
+// class Test extends Array {}
+// const test = Test.from(5)
+// console.log(test)
+// const arr = []
+// console.log(arr.__proto__.__proto__.__proto__ === null)
+// const promise = new Promise(() => {
+//   console.log('test')
+// })
+// promise.finally(() => {
+//   console.log('FINAL')
+// })
+// function loop() {
+//   new Promise((res) => {
+//     res()
+//   }).then(loop)
+// }
+// loop()
