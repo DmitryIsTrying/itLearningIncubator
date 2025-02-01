@@ -131,3 +131,7 @@
 //   }).then(loop)
 // }
 // loop()
+const pr = Promise.any([])
+setTimeout(() => {
+  console.dir(pr)
+}, 1000)
