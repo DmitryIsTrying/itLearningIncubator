@@ -135,3 +135,6 @@ const pr = Promise.any([])
 setTimeout(() => {
   console.dir(pr)
 }, 1000)
+
+// test git command
+//just test merge conflict
