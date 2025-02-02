@@ -131,11 +131,31 @@
 //   }).then(loop)
 // }
 // loop()
-const pr = Promise.any([])
-setTimeout(() => {
-  console.dir(pr)
-}, 1000)
+// const pr = Promise.any([])
+// setTimeout(() => {
+//   console.dir(pr)
+// }, 1000)
 //not once var
 // test git command
 //ups it's merge conflict
 //just test merge conflict
+'use strict'
+let x = 10
+function fn() {
+  console.log(x)
+
+  x = 3
+  return
+  if (true) {
+    function x() {}
+  }
+}
+fn()
+console.log(x)
+// 'use strict'
+// if (true) {
+//   function test() {
+//     console.log('bingo')
+//   }
+//   test()
+// }
