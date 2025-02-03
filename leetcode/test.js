@@ -139,19 +139,19 @@
 // test git command
 //ups it's merge conflict
 //just test merge conflict
-'use strict'
-let x = 10
-function fn() {
-  console.log(x)
+// 'use strict'
+// let x = 10
+// function fn() {
+//   console.log(x)
 
-  x = 3
-  return
-  if (true) {
-    function x() {}
-  }
-}
-fn()
-console.log(x)
+//   x = 3
+//   return
+//   if (true) {
+//     function x() {}
+//   }
+// }
+// fn()
+// console.log(x)
 // 'use strict'
 // if (true) {
 //   function test() {
@@ -159,3 +159,84 @@ console.log(x)
 //   }
 //   test()
 // }
+
+// let timeoutId = null
+
+// return function (...args) {
+//   if (timeoutId) {
+//     clearTimeout(timeoutId)
+//   }
+//   timeoutId = setTimeout(() => {
+//     fn(...args)
+//   }, timer)
+// }
+
+// const debounce = (fn, timer) => {
+//   // написать декоратор дебаунса
+// }
+
+// const printNumber = (number) => {
+//   console.log(number)
+// }
+
+// const debouncedNumber = debounce(printNumber, 1000)
+
+// const tick = (timer) =>
+//   new Promise((res) => {
+//     setTimeout(() => {
+//       res()
+//     }, timer)
+//   })
+
+// const testFoo = async () => {
+//   debouncedNumber(1)
+//   debouncedNumber(2)
+//   await tick(500)
+
+//   debouncedNumber(3)
+
+//   await tick(1000)
+
+//   debouncedNumber(4)
+// }
+// testFoo() // 3,4
+
+// const object = {
+//   persons: {
+//     children: [
+//       { name: 'zxc', address: { street: 'asd', num: 1 } },
+//       { name: 'asd', address: { street: 'qwe', num: 2 } },
+//     ],
+//   },
+// }
+
+const object = {
+  persons: {
+    children: [
+      { name: 'zxc', address: { street: 'asd', num: 1 } },
+      { name: 'asd', address: { street: 'qwe', num: 2 } },
+    ],
+  },
+}
+
+function isObject(obj) {
+  return obj.__proto__.constructor.name === 'Object'
+}
+
+function deep(obj) {
+  if (Array.isArray(obj)) {
+    return obj.map(deep)
+  } else if (isObject(obj)) {
+    const result = {}
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        result[key] = deep(obj[key])
+      }
+    }
+    return result
+  } else {
+    return obj
+  }
+}
+const copyObject = deep(object)
+console.log(copyObject.persons.children[1].address === object.persons.children[1].address)
