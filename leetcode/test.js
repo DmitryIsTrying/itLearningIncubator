@@ -210,33 +210,69 @@
 //   },
 // }
 
-const object = {
-  persons: {
-    children: [
-      { name: 'zxc', address: { street: 'asd', num: 1 } },
-      { name: 'asd', address: { street: 'qwe', num: 2 } },
-    ],
-  },
-}
+// const object = {
+//   persons: {
+//     children: [
+//       { name: 'zxc', address: { street: 'asd', num: 1 } },
+//       { name: 'asd', address: { street: 'qwe', num: 2 } },
+//     ],
+//   },
+// }
 
-function isObject(obj) {
-  return obj.__proto__.constructor.name === 'Object'
-}
+// function isObject(obj) {
+//   return obj.__proto__.constructor.name === 'Object'
+// }
 
-function deep(obj) {
-  if (Array.isArray(obj)) {
-    return obj.map(deep)
-  } else if (isObject(obj)) {
-    const result = {}
-    for (const key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        result[key] = deep(obj[key])
-      }
+// function deep(obj) {
+//   if (Array.isArray(obj)) {
+//     return obj.map(deep)
+//   } else if (isObject(obj)) {
+//     const result = {}
+//     for (const key in obj) {
+//       if (obj.hasOwnProperty(key)) {
+//         result[key] = deep(obj[key])
+//       }
+//     }
+//     return result
+//   } else {
+//     return obj
+//   }
+// }
+// const copyObject = deep(object)
+// console.log(copyObject.persons.children[1].address === object.persons.children[1].address)
+// function fibonacci(n) {
+//   let prev = 1
+//   let current = 1
+//   for (let i = 3; i <= n; i++) {
+//     const next = prev + current
+//     prev = current
+//     current = next
+//   }
+
+//   return current
+// }
+// console.log(fibonacci(9)) // 1 1 2 3 5 8 13 21 34
+
+function hoarSort(arr, fn) {
+  if (arr.length <= 1) return arr // Базовый случай
+
+  const index = Math.floor(arr.length / 2)
+  const pivot = arr[index] // Выбор опорного элемента
+  const leftArr = []
+  const rightArr = []
+
+  for (let i = 0; i < arr.length; i++) {
+    if (i === index) continue // Пропускаем pivot
+    if (fn(arr[i], pivot) < 0) {
+      leftArr.push(arr[i]) // Элементы меньше pivot
+    } else {
+      rightArr.push(arr[i]) // Элементы больше или равны pivot
     }
-    return result
-  } else {
-    return obj
   }
+
+  // Рекурсивно сортируем leftArr и rightArr
+  return [...hoarSort(leftArr, fn), pivot, ...hoarSort(rightArr, fn)]
 }
-const copyObject = deep(object)
-console.log(copyObject.persons.children[1].address === object.persons.children[1].address)
+const arr = [5, 4, 1, 2, 8, 6, 3, 7, 9]
+const sortFn = (a, b) => a - b
+console.log(hoarSort(arr, sortFn))
