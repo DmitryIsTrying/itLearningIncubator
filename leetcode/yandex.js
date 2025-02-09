@@ -121,3 +121,20 @@
 // Promise.resolve(5).then(console.log)
 // console.log('test')
 // 2 undefined (another task)
+// function deep(obj) {
+//   if (Array.isArray(obj)) {
+//     return obj.map(deep)
+//   } else if (isObject(obj)) {
+//     const result = {}
+//     for (const key in obj) {
+//       if (obj.hasOwnProperty(key)) {
+//         result[key] = deep(obj[key])
+//       }
+//     }
+//     return result
+//   } else {
+//     return obj
+//   }
+// }
+console.log(Promise.resolve(5))
+console.log(new Promise((res) => res(5)))

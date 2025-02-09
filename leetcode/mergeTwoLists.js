@@ -1,0 +1,50 @@
+// var mergeTwoLists = function (...lists) {
+//   const length = Math.max(...lists.map((list) => list.length))
+//   const result = []
+//   for (let i = 0; i < length; i++) {
+//     for (const list of lists) {
+//       if (list[i]) {
+//         result.push(list[i])
+//       }
+//     }
+//   }
+//   return result
+// }
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} list1
+ * @param {ListNode} list2
+ * @return {ListNode}
+ */
+var mergeTwoLists = function (list1, list2) {
+  const dummy = { val: -1, next: null }
+  let current = dummy
+
+  while (list1 !== null && list2 !== null) {
+    if (list1.val < list2.val) {
+      current.next = list1
+      list1 = list1.next
+    } else {
+      current.next = list2
+      list2 = list2.next
+    }
+    current = current.next
+  }
+
+  if (list1 !== null) {
+    current.next = list1
+  } else {
+    current.next = list2
+  }
+
+  return dummy.next
+}
+const list1 = [1, 2, 4],
+  list2 = [1, 3, 4]
+console.log(mergeTwoLists(list1, list2))
