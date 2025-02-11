@@ -275,4 +275,6 @@ function hoarSort(arr, fn) {
 }
 const arr = [5, 4, 1, 2, 8, 6, 3, 7, 9]
 const sortFn = (a, b) => a - b
+const sortFn2 = (a, b) => b - a
 console.log(hoarSort(arr, sortFn))
+console.log(hoarSort(arr, sortFn2))
