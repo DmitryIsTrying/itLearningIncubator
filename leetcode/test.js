@@ -253,28 +253,54 @@
 // }
 // console.log(fibonacci(9)) // 1 1 2 3 5 8 13 21 34
 
-function hoarSort(arr, fn) {
-  if (arr.length <= 1) return arr // Базовый случай
+// function hoarSort(arr, fn) {
+//   if (arr.length <= 1) return arr // Базовый случай
 
-  const index = Math.floor(arr.length / 2)
-  const pivot = arr[index] // Выбор опорного элемента
-  const leftArr = []
-  const rightArr = []
+//   const index = Math.floor(arr.length / 2)
+//   const pivot = arr[index] // Выбор опорного элемента
+//   const leftArr = []
+//   const rightArr = []
 
-  for (let i = 0; i < arr.length; i++) {
-    if (i === index) continue // Пропускаем pivot
-    if (fn(arr[i], pivot) < 0) {
-      leftArr.push(arr[i]) // Элементы меньше pivot
+//   for (let i = 0; i < arr.length; i++) {
+//     if (i === index) continue // Пропускаем pivot
+//     if (fn(arr[i], pivot) < 0) {
+//       leftArr.push(arr[i]) // Элементы меньше pivot
+//     } else {
+//       rightArr.push(arr[i]) // Элементы больше или равны pivot
+//     }
+//   }
+
+//   // Рекурсивно сортируем leftArr и rightArr
+//   return [...hoarSort(leftArr, fn), pivot, ...hoarSort(rightArr, fn)]
+// }
+// const arr = [5, 4, 1, 2, 8, 6, 3, 7, 9]
+// const sortFn = (a, b) => a - b
+// const sortFn2 = (a, b) => b - a
+// console.log(hoarSort(arr, sortFn))
+// console.log(hoarSort(arr, sortFn2))
+
+// This is a JavaScript coding problem from BFE.dev
+
+function curry(fn) {
+  const length = fn.length // Получаем количество ожидаемых аргументов
+  return function curried(...args) {
+    if (args.length >= length) {
+      // Если передано достаточно аргументов, вызываем исходную функцию
+      return fn(...args)
     } else {
-      rightArr.push(arr[i]) // Элементы больше или равны pivot
+      // Иначе возвращаем новую функцию, которая ожидает остальные аргументы
+      return function (...moreArgs) {
+        return curried(...args, ...moreArgs)
+      }
     }
   }
-
-  // Рекурсивно сортируем leftArr и rightArr
-  return [...hoarSort(leftArr, fn), pivot, ...hoarSort(rightArr, fn)]
 }
-const arr = [5, 4, 1, 2, 8, 6, 3, 7, 9]
-const sortFn = (a, b) => a - b
-const sortFn2 = (a, b) => b - a
-console.log(hoarSort(arr, sortFn))
-console.log(hoarSort(arr, sortFn2))
+
+const join = (a, b, c) => {
+  return `${a}_${b}_${c}`
+}
+const curriedJoin = curry(join)
+console.log(curriedJoin(1, 2, 3)) // '1_2_3'
+console.log(curriedJoin(1)(2, 3)) // '1_2_3'
+console.log(curriedJoin(1, 2)(3)) // '1_2_3'
+console.log(curriedJoin(1)(2)(3)) // '1_2_3'
