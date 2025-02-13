@@ -281,26 +281,86 @@
 
 // This is a JavaScript coding problem from BFE.dev
 
-function curry(fn) {
-  const length = fn.length // Получаем количество ожидаемых аргументов
-  return function curried(...args) {
-    if (args.length >= length) {
-      // Если передано достаточно аргументов, вызываем исходную функцию
-      return fn(...args)
-    } else {
-      // Иначе возвращаем новую функцию, которая ожидает остальные аргументы
-      return function (...moreArgs) {
-        return curried(...args, ...moreArgs)
+// function curry(fn) {
+//   const length = fn.length // Получаем количество ожидаемых аргументов
+//   return function curried(...args) {
+//     if (args.length >= length) {
+//       // Если передано достаточно аргументов, вызываем исходную функцию
+//       return fn(...args)
+//     } else {
+//       // Иначе возвращаем новую функцию, которая ожидает остальные аргументы
+//       return function (...moreArgs) {
+//         return curried(...args, ...moreArgs)
+//       }
+//     }
+//   }
+// }
+
+// const join = (a, b, c) => {
+//   return `${a}_${b}_${c}`
+// }
+// const curriedJoin = curry(join)
+// console.log(curriedJoin(1, 2, 3)) // '1_2_3'
+// console.log(curriedJoin(1)(2, 3)) // '1_2_3'
+// console.log(curriedJoin(1, 2)(3)) // '1_2_3'
+// console.log(curriedJoin(1)(2)(3)) // '1_2_3'
+// const test = () => {
+//   console.log(arguments)
+// }
+// test()
+// var valueTest = 'test'
+// const obj = {
+//   fn: () => {
+//     console.log(this.valueTest)
+//   },
+// }
+// obj.fn()
+// console.log(global.crypto())
+// start pr1 end resolve pr2 sT
+// start end pr1 timer1 pr2 timer2
+// function isValidStr(str) {
+//   const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+//   const strSet = new Set(str.toUpperCase())
+
+//   for (let char of alphabet) {
+//     if (!strSet.has(char)) {
+//       return false
+//     }
+//   }
+
+//   return true
+// }
+// console.log(isValidStr('A'))
+
+// console.log('z'.charCodeAt())
+function validateBrackets(str) {
+  const obj = {
+    ']': '[',
+    '}': '{',
+    ')': '(',
+  }
+
+  const stack = []
+
+  for (const el of str) {
+    const currentBracket = obj[el]
+    if (currentBracket) {
+      const lastBracketInStack = stack.pop()
+      if (lastBracketInStack !== currentBracket) {
+        return false
       }
+    } else {
+      stack.push(el)
     }
   }
+
+  if (stack.length > 0) return false
+
+  return true
 }
 
-const join = (a, b, c) => {
-  return `${a}_${b}_${c}`
-}
-const curriedJoin = curry(join)
-console.log(curriedJoin(1, 2, 3)) // '1_2_3'
-console.log(curriedJoin(1)(2, 3)) // '1_2_3'
-console.log(curriedJoin(1, 2)(3)) // '1_2_3'
-console.log(curriedJoin(1)(2)(3)) // '1_2_3'
+console.log(validateBrackets('()')) // true
+console.log(validateBrackets('()[]{}')) // true
+console.log(validateBrackets('(]')) // false
+console.log(validateBrackets('([)]')) // false
+console.log(validateBrackets('{[]}')) // true
