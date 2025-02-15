@@ -253,31 +253,31 @@
 // }
 // console.log(fibonacci(9)) // 1 1 2 3 5 8 13 21 34
 
-// function hoarSort(arr, fn) {
-//   if (arr.length <= 1) return arr // Базовый случай
+function hoarSort(arr, fn) {
+  if (arr.length <= 1) return arr // Базовый случай
 
-//   const index = Math.floor(arr.length / 2)
-//   const pivot = arr[index] // Выбор опорного элемента
-//   const leftArr = []
-//   const rightArr = []
+  const index = Math.floor(arr.length / 2)
+  const pivot = arr[index] // Выбор опорного элемента
+  const leftArr = []
+  const rightArr = []
 
-//   for (let i = 0; i < arr.length; i++) {
-//     if (i === index) continue // Пропускаем pivot
-//     if (fn(arr[i], pivot) < 0) {
-//       leftArr.push(arr[i]) // Элементы меньше pivot
-//     } else {
-//       rightArr.push(arr[i]) // Элементы больше или равны pivot
-//     }
-//   }
+  for (let i = 0; i < arr.length; i++) {
+    if (i === index) continue // Пропускаем pivot
+    if (fn(arr[i], pivot) < 0) {
+      leftArr.push(arr[i]) // Элементы меньше pivot
+    } else {
+      rightArr.push(arr[i]) // Элементы больше или равны pivot
+    }
+  }
 
-//   // Рекурсивно сортируем leftArr и rightArr
-//   return [...hoarSort(leftArr, fn), pivot, ...hoarSort(rightArr, fn)]
-// }
-// const arr = [5, 4, 1, 2, 8, 6, 3, 7, 9]
-// const sortFn = (a, b) => a - b
-// const sortFn2 = (a, b) => b - a
-// console.log(hoarSort(arr, sortFn))
-// console.log(hoarSort(arr, sortFn2))
+  // Рекурсивно сортируем leftArr и rightArr
+  return [...hoarSort(leftArr, fn), pivot, ...hoarSort(rightArr, fn)]
+}
+const arr = [5, 4, 1, 2, 8, 6, 3, 7, 9]
+const sortFn = (a, b) => a - b
+const sortFn2 = (a, b) => b - a
+console.log(hoarSort(arr, sortFn))
+console.log(hoarSort(arr, sortFn2))
 
 // This is a JavaScript coding problem from BFE.dev
 
@@ -333,34 +333,61 @@
 // console.log(isValidStr('A'))
 
 // console.log('z'.charCodeAt())
-function validateBrackets(str) {
-  const obj = {
-    ']': '[',
-    '}': '{',
-    ')': '(',
-  }
+// function validateBrackets(str) {
+//   const obj = {
+//     ']': '[',
+//     '}': '{',
+//     ')': '(',
+//   }
 
-  const stack = []
+//   const stack = []
 
-  for (const el of str) {
-    const currentBracket = obj[el]
-    if (currentBracket) {
-      const lastBracketInStack = stack.pop()
-      if (lastBracketInStack !== currentBracket) {
-        return false
-      }
+//   for (const el of str) {
+//     const currentBracket = obj[el]
+//     if (currentBracket) {
+//       const lastBracketInStack = stack.pop()
+//       if (lastBracketInStack !== currentBracket) {
+//         return false
+//       }
+//     } else {
+//       stack.push(el)
+//     }
+//   }
+
+//   if (stack.length > 0) return false
+
+//   return true
+// }
+
+// console.log(validateBrackets('()')) // true
+// console.log(validateBrackets('()[]{}')) // true
+// console.log(validateBrackets('(]')) // false
+// console.log(validateBrackets('([)]')) // false
+// console.log(validateBrackets('{[]}')) // true
+// var test = 5
+// const obj = {
+//   test: () => {
+//     console.log(this)
+//   },
+// }
+// obj.test()
+var wave = function (height) {
+  let left = 0,
+    right = height.length - 1,
+    leftMax = height[left],
+    rightMax = height[right],
+    water = 0
+  while (left < right) {
+    if (height[left] < height[right]) {
+      leftMax = Math.max(leftMax, height[left])
+      water += leftMax - height[left]
+      left++
     } else {
-      stack.push(el)
+      rightMax = Math.max(rightMax, height[right])
+      water += rightMax - height[right]
+      right--
     }
   }
-
-  if (stack.length > 0) return false
-
-  return true
+  return water
 }
-
-console.log(validateBrackets('()')) // true
-console.log(validateBrackets('()[]{}')) // true
-console.log(validateBrackets('(]')) // false
-console.log(validateBrackets('([)]')) // false
-console.log(validateBrackets('{[]}')) // true
+console.log(wave([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
