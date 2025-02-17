@@ -253,31 +253,31 @@
 // }
 // console.log(fibonacci(9)) // 1 1 2 3 5 8 13 21 34
 
-function hoarSort(arr, fn) {
-  if (arr.length <= 1) return arr // Базовый случай
+// function hoarSort(arr, fn) {
+//   if (arr.length <= 1) return arr // Базовый случай
 
-  const index = Math.floor(arr.length / 2)
-  const pivot = arr[index] // Выбор опорного элемента
-  const leftArr = []
-  const rightArr = []
+//   const index = Math.floor(arr.length / 2)
+//   const pivot = arr[index] // Выбор опорного элемента
+//   const leftArr = []
+//   const rightArr = []
 
-  for (let i = 0; i < arr.length; i++) {
-    if (i === index) continue // Пропускаем pivot
-    if (fn(arr[i], pivot) < 0) {
-      leftArr.push(arr[i]) // Элементы меньше pivot
-    } else {
-      rightArr.push(arr[i]) // Элементы больше или равны pivot
-    }
-  }
+//   for (let i = 0; i < arr.length; i++) {
+//     if (i === index) continue // Пропускаем pivot
+//     if (fn(arr[i], pivot) < 0) {
+//       leftArr.push(arr[i]) // Элементы меньше pivot
+//     } else {
+//       rightArr.push(arr[i]) // Элементы больше или равны pivot
+//     }
+//   }
 
-  // Рекурсивно сортируем leftArr и rightArr
-  return [...hoarSort(leftArr, fn), pivot, ...hoarSort(rightArr, fn)]
-}
-const arr = [5, 4, 1, 2, 8, 6, 3, 7, 9]
-const sortFn = (a, b) => a - b
-const sortFn2 = (a, b) => b - a
-console.log(hoarSort(arr, sortFn))
-console.log(hoarSort(arr, sortFn2))
+//   // Рекурсивно сортируем leftArr и rightArr
+//   return [...hoarSort(leftArr, fn), pivot, ...hoarSort(rightArr, fn)]
+// }
+// const arr = [5, 4, 1, 2, 8, 6, 3, 7, 9]
+// const sortFn = (a, b) => a - b
+// const sortFn2 = (a, b) => b - a
+// console.log(hoarSort(arr, sortFn))
+// console.log(hoarSort(arr, sortFn2))
 
 // This is a JavaScript coding problem from BFE.dev
 
@@ -371,23 +371,51 @@ console.log(hoarSort(arr, sortFn2))
 //   },
 // }
 // obj.test()
-var wave = function (height) {
-  let left = 0,
-    right = height.length - 1,
-    leftMax = height[left],
-    rightMax = height[right],
-    water = 0
-  while (left < right) {
-    if (height[left] < height[right]) {
-      leftMax = Math.max(leftMax, height[left])
-      water += leftMax - height[left]
-      left++
-    } else {
-      rightMax = Math.max(rightMax, height[right])
-      water += rightMax - height[right]
-      right--
+// var wave = function (height) {
+//   let left = 0,
+//     right = height.length - 1,
+//     leftMax = height[left],
+//     rightMax = height[right],
+//     water = 0
+//   while (left < right) {
+//     if (height[left] < height[right]) {
+//       leftMax = Math.max(leftMax, height[left])
+//       water += leftMax - height[left]
+//       left++
+//     } else {
+//       rightMax = Math.max(rightMax, height[right])
+//       water += rightMax - height[right]
+//       right--
+//     }
+//   }
+//   return water
+// }
+// console.log(wave([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
+function getCompressedString(text) {
+  const tokens = text.match(/[\wа-яА-ЯёЁ]+|[^\wа-яА-ЯёЁ]+/g) || []
+
+  const frequency = new Map()
+  const order = new Map()
+
+  tokens.forEach((token, index) => {
+    if (/[\wа-яА-ЯёЁ]+/.test(token)) {
+      const lowerToken = token.toLowerCase()
+      frequency.set(lowerToken, (frequency.get(lowerToken) || 0) + 1)
+      if (!order.has(lowerToken)) {
+        order.set(lowerToken, index)
+      }
     }
-  }
-  return water
+  })
+
+  const sortedWords = [...frequency.keys()].sort((a, b) => {
+    return frequency.get(b) - frequency.get(a) || order.get(a) - order.get(b)
+  })
+
+  const wordToIndex = new Map(sortedWords.map((word, idx) => [word, idx]))
+
+  return tokens
+    .map((token) => (wordToIndex.has(token.toLowerCase()) ? wordToIndex.get(token.toLowerCase()) : token))
+    .join('')
 }
-console.log(wave([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
+
+console.log(getCompressedString('Hello my name is Vitaliy! And what is your name?'))
