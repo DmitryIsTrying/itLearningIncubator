@@ -11,11 +11,11 @@ function isObject(obj) {
 //     return obj.map(structuredClone)
 //   } else if (isObject(obj)) {
 //     const result = {}
-//     for (const key in obj) {
-//       if (obj.hasOwnProperty(key)) {
-//         result[key] = structuredClone(obj[key])
-//       }
-//     }
+// for (const key in obj) {
+//   if (obj.hasOwnProperty(key)) {
+//     result[key] = structuredClone(obj[key])
+//   }
+// }
 //     return result
 //   } else {
 //     return obj
@@ -69,4 +69,7 @@ function isEqualObjs(obj1, obj2) {
 
 // console.log(isEqualObjs({ a: 1, b: 2, c: undefined }, { a: 1, b: 2, y: 3 }))
 // console.log(isEqualObjs({ a: 1, b: 2, c: undefined }, { a: 1, b: 2, c: undefined }))
-console.log(isEqualObjs({ a: 1, b: 2, c: { a: 1, b: 2 } }, { a: 1, b: 2, c: { a: 1, b: 2 } }))
+// console.log(isEqualObjs({ a: 1, b: 2, c: { a: 1, b: 2 } }, { a: 1, b: 2, c: { a: 1, b: 2 } }))
+// Object.prototype.test = 123
+// const obj = {}
+// console.log(obj.test)
