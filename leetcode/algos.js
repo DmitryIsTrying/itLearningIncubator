@@ -177,7 +177,7 @@ const arr2 = [
   [17, 19],
 ]
 
-console.log(intersection(arr1, arr2))
+// console.log(intersection(arr1, arr2))
 function arrayPairSum(nums) {
   nums.sort((a, b) => a - b)
 
@@ -192,3 +192,109 @@ function arrayPairSum(nums) {
 }
 
 // console.log(arrayPairSum([6, 2, 6, 5, 1, 2]))
+
+function graphSearch(graph, start, end) {
+  let queue = []
+  queue.push({ node: start, steps: 0 }) // Добавляем начальную вершину и количество шагов (0)
+
+  while (queue.length > 0) {
+    const { node: current, steps } = queue.shift() // Извлекаем текущую вершину и количество шагов
+
+    if (!graph[current]) {
+      graph[current] = []
+    }
+
+    if (graph[current].includes(end)) {
+      return steps + 1 // Возвращаем количество шагов + 1 (так как мы переходим к конечной вершине)
+    } else {
+      // Добавляем соседние вершины в очередь с увеличенным количеством шагов
+      queue = [...queue, ...graph[current].map((neighbor) => ({ node: neighbor, steps: steps + 1 }))]
+    }
+  }
+
+  return false // Если путь не найден
+}
+// const graph = {}
+
+// graph.a = ['b', 'c']
+// graph.b = ['f', 'c']
+// graph.c = ['d', 'e']
+// graph.d = ['f']
+// graph.e = ['f']
+// graph.f = ['g']
+// console.log(graphSearch(graph, 'b', 'g'))
+
+// Алгоритм дейкстры для поиска кратчайшего пути в графе
+const graph = {
+  a: { b: 2, c: 1 },
+  b: { f: 7 },
+  c: { d: 5, e: 2 },
+  d: { f: 2 },
+  e: { f: 1 },
+  f: { g: 1 },
+  g: {},
+}
+
+function shortPath(graph, start, end) {
+  const costs = {} // Хранит стоимость пути до каждой вершины
+  const processed = [] // Хранит обработанные вершины
+  let neighbors = {}
+
+  // Инициализация costs
+  Object.keys(graph).forEach((node) => {
+    if (node === start) {
+      costs[node] = 0 // Стоимость пути до стартовой вершины равна 0
+    } else {
+      costs[node] = Infinity // Для остальных вершин пока что бесконечность
+    }
+  })
+
+  // Находим вершину с минимальной стоимостью
+  let node = findNodeLowestCost(costs, processed)
+
+  while (node) {
+    const cost = costs[node] // Текущая стоимость пути до вершины node
+    neighbors = graph[node] // Соседи текущей вершины
+
+    // Обновляем стоимости для всех соседей
+    Object.keys(neighbors).forEach((neighbor) => {
+      let newCost = cost + neighbors[neighbor] // Новая стоимость пути
+      if (newCost < costs[neighbor]) {
+        costs[neighbor] = newCost // Обновляем, если нашли более короткий путь
+      }
+    })
+
+    processed.push(node) // Помечаем вершину как обработанную
+    node = findNodeLowestCost(costs, processed) // Ищем следующую вершину
+  }
+
+  return costs[end] // Возвращаем стоимость пути до конечной вершины
+}
+
+function findNodeLowestCost(costs, processed) {
+  let lowestCost = Infinity
+  let lowestNode = null
+
+  Object.keys(costs).forEach((node) => {
+    const cost = costs[node]
+    if (cost < lowestCost && !processed.includes(node)) {
+      lowestCost = cost
+      lowestNode = node
+    }
+  })
+
+  return lowestNode
+}
+
+// console.log(shortPath(graph, 'a', 'g')) // Вывод: 3
+
+function sumTree(root, cache = { counter: 0 }) {
+  if (!root) return
+  cache.counter += root.val
+
+  root.children((node) => {
+    sumTree(node, cache)
+  })
+
+  return cache.counter
+}
