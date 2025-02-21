@@ -116,66 +116,68 @@
 // console.log(algoStr('aaaaaaa')) // 1
 // console.log(algoStr('abcdefg')) // 7
 
-// function intersection(user1, user2) {
-//   const sameIntersection = []
+function intersection(user1, user2) {
+  const sameIntersection = []
 
-//   let i = 0,
-//     j = 0
+  let i = 0,
+    j = 0
 
-//   while (i < user1.length && j < user2.length) {
-//     const start1 = user1[i][0]
-//     const end1 = user1[i][1]
-//     const start2 = user2[j][0]
-//     const end2 = user2[j][1]
+  while (i < user1.length && j < user2.length) {
+    const start1 = user1[i][0]
+    const end1 = user1[i][1]
+    const start2 = user2[j][0]
+    const end2 = user2[j][1]
 
-//     // Находим пересечение интервалов
-//     const intersectStart = Math.max(start1, start2)
-//     const intersectEnd = Math.min(end1, end2)
+    // Находим пересечение интервалов
+    const intersectStart = Math.max(start1, start2)
+    const intersectEnd = Math.min(end1, end2)
 
-//     if (intersectStart <= intersectEnd) {
-//       sameIntersection.push([intersectStart, intersectEnd])
-//     }
+    if (intersectStart <= intersectEnd) {
+      sameIntersection.push([intersectStart, intersectEnd])
+    }
 
-//     // Перемещаем указатели на следующий интервал в массиве
-//     if (end1 < end2) {
-//       i++
-//     } else {
-//       j++
-//     }
-//   }
-//   // [ [ 12, 15 ], [ 17, 18 ], [ 17, 19 ] ]
-//   function mergeIntervals(arr) {
-//     let currentInterval = arr[0]
-//     const result = []
-//     for (let i = 1; i < arr.length; i++) {
-//       const nextInterval = arr[i]
+    // Перемещаем указатели на следующий интервал в массиве
+    if (end1 < end2) {
+      i++
+    } else {
+      j++
+    }
+  }
+  console.log(sameIntersection)
 
-//       if (currentInterval[1] >= nextInterval[0]) {
-//         currentInterval[1] = Math.max(nextInterval[1], currentInterval[1])
-//       } else {
-//         result.push(currentInterval)
-//         currentInterval = nextInterval
-//       }
-//     }
-//     result.push(currentInterval)
+  // [ [ 12, 15 ], [ 17, 18 ], [ 17, 19 ] ]
+  function mergeIntervals(arr) {
+    let currentInterval = arr[0]
+    const result = []
+    for (let i = 1; i < arr.length; i++) {
+      const nextInterval = arr[i]
 
-//     return result
-//   }
+      if (currentInterval[1] >= nextInterval[0]) {
+        currentInterval[1] = Math.max(nextInterval[1], currentInterval[1])
+      } else {
+        result.push(currentInterval)
+        currentInterval = nextInterval
+      }
+    }
+    result.push(currentInterval)
 
-//   return mergeIntervals(sameIntersection)
-// }
+    return result
+  }
 
-// const arr1 = [
-//   [10, 15],
-//   [17, 19],
-// ]
+  return mergeIntervals(sameIntersection)
+}
 
-// const arr2 = [
-//   [12, 18],
-//   [17, 19],
-// ]
+const arr1 = [
+  [10, 15],
+  [17, 19],
+]
 
-// console.log(intersection(arr1, arr2))
+const arr2 = [
+  [12, 18],
+  [17, 19],
+]
+
+console.log(intersection(arr1, arr2))
 function arrayPairSum(nums) {
   nums.sort((a, b) => a - b)
 
@@ -189,4 +191,4 @@ function arrayPairSum(nums) {
   return sum
 }
 
-console.log(arrayPairSum([6, 2, 6, 5, 1, 2]))
+// console.log(arrayPairSum([6, 2, 6, 5, 1, 2]))
