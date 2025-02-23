@@ -76,5 +76,11 @@ var isPalindrome = function (head) {
 const obj4 = { val: 1, next: null }
 const obj3 = { val: 2, next: obj4 }
 const obj2 = { val: 2, next: obj3 }
-const obj = { val: 1, next: obj2 }
-console.log(isPalindrome(obj))
+// const obj = { val: 1, next: obj2 }
+// console.log(isPalindrome(obj))
+
+const arr = [1, 2, 3]
+arr['test'] = 'value'
+arr[10] = 4
+
+arr.forEach((el) => console.log(el))
