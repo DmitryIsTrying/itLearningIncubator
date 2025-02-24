@@ -172,3 +172,43 @@ console.log(findTwoSum(sortedArray, targetSum)) // Выведет: [2, 11]
 // ===========
 
 //
+
+// Поиск в ширину - BFS - Это алгоритм обхода графа (или дерева), который исследует все узлы на текущем уровне глубины перед переходом к узлам на следующем уровне.
+function bfs(graph, start) {
+  const queue = [start] // Очередь для BFS
+  const visited = new Set() // Множество для хранения посещенных вершин
+  visited.add(start)
+
+  while (queue.length > 0) {
+    const node = queue.shift() // Извлекаем текущую вершину
+    console.log(node) // Обрабатываем вершину (например, выводим ее)
+
+    // Добавляем всех непосещенных соседей в очередь
+    for (const neighbor of graph[node] || []) {
+      if (!visited.has(neighbor)) {
+        visited.add(neighbor)
+        queue.push(neighbor)
+      }
+    }
+  }
+}
+
+// Поиск в глубину - DFS - DFS исследует узлы, двигаясь как можно глубже по одной ветке, прежде чем вернуться и исследовать другие ветки.
+function dfsIterative(graph, start) {
+  const stack = [start] // Стек для DFS
+  const visited = new Set() // Множество для хранения посещенных вершин
+  visited.add(start)
+
+  while (stack.length > 0) {
+    const node = stack.pop() // Извлекаем текущую вершину
+    console.log(node) // Обрабатываем вершину (например, выводим ее)
+
+    // Добавляем всех непосещенных соседей в стек
+    for (const neighbor of graph[node] || []) {
+      if (!visited.has(neighbor)) {
+        visited.add(neighbor)
+        stack.push(neighbor)
+      }
+    }
+  }
+}
